@@ -1,1 +1,1 @@
-# Inquirer-README-Generator-
+# Inquirer-README-Generator
