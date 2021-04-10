@@ -1,3 +1,7 @@
+const mit = The MIT License
+const mozilla =  Mozilla Public License 2.0
+const gnu = GNU GPL v3
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
