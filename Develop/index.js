@@ -34,12 +34,15 @@ const questions = [{
   {
     type: 'input',
     name: 'License',
-    message: 'placeholder for licenses',
+    message: 'Choose License Type Used',
+    choices: ["The MIT License", "Mozilla Public License 2.0", "GNU GPL v3"
+    ]
   },
   {
     type: 'input',
     name: 'Contributing',
-    message: 'List how you would want other developers to contribute to your project',
+    message: 'Can other developers contribute to your project',
+    choices: ["Yes", "No"]
   },
   {
     type: 'input',
@@ -54,7 +57,7 @@ const questions = [{
 },];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(generateMarkdown, answers) {}
 
 // TODO: Create a function to initialize app
 function init() {}
