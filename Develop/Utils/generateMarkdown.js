@@ -23,9 +23,9 @@ function renderLicenseLink(license) {
     if(license === "The MIT License") {
         return mitLink;
     } else if (license === "Mozilla Public License 2.0") {
-        return mozilla;
+        return mozillaLink;
     } else if (license ==="GNU GPL v3") {
-        return gnu;
+        return gnuLink;
     }else return ""
 }
 
@@ -36,11 +36,21 @@ function renderLicenseSection(license) {
 } 
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+ function generateMarkdown(data) {
+    return `
+
+## Username
+${data.Username}
+
+##LicenseBadge
+ ${renderLicenseSection(data.License)}
+
+  ## Title 
+  ${data.Title}
+   
 
   ## Description 
-  ${data.description}
+  ${data.Description}
 
   ## Table of Contents
   * [Installation] (#installation)
@@ -53,26 +63,24 @@ function generateMarkdown(data) {
   ## Installation
   ${data.Installation}
 
-  ##Usage
-  ${data.usage}
+  ## Usage
+  ${data.Usage}
 
-  ##License
-  ${renderLicenseSection(data.license)}
-
-  ##Contributing
-  Can other developers contribute to your project,  ${data.contributing}
-
-  ##Tests
-  ${data.tests}
-
-  ##Questions
-  Submit questions, ${data.questions}
+  ## License
+  ${data.License}
+  ${renderLicenseSection(data.License)}
   
-  ##Username
-  ${data.Username}
 
-  ##Email
-  ${data.email}
+  ## Contributing
+  Can other developers contribute to your project,  ${data.Contributing}
+
+  ## Tests
+  ${data.Tests}
+
+  ## Questions
+  ${data.Username}
+  ${data.Email}
+  
 `;
 }
 
