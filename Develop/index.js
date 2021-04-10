@@ -6,7 +6,9 @@ const fs = require('fs');
 const generateMarkdown = require('./Utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = [{
+const questions = () => {
+    return inquirer.prompt ([
+        {
     type: 'input',
     name: 'Your-Project-Title',
     message: 'What is your project title?',
@@ -52,21 +54,24 @@ const questions = [{
     {
         type: 'input',
         name: 'Questions',
-        message: 'How can questions be submitted about your project?',}
-]   
+        message: 'How can questions be submitted about your project?',
+    },
+]);
+};   
 
 // TODO: Create a function to write README file
-.then((data) => {
-    const newReadMe = `${data.name.toLowerCase().split(' ').join('')}.json`;
+function writeToFile(fileName, data) {
 
-    fs.writeFile(README.MD, JSON.stringify(data, null, '\t'), (err) =>
-      err ? console.log(err) : console.log('Success!'))
-
+    fs.writeFile(fileName + ".md", JSON.stringify(data), function(err) {
+        if (err) {
+        console.log(err);
+    } else console.log ("You have successfully wrote in README.md")
 // TODO: Create a function to initialize app
 function init() {
-
 
 }
 
 // Function call to initialize app
-init();})
+init();
+
+
