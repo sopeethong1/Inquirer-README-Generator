@@ -52,12 +52,15 @@ const questions = [{
     {
         type: 'input',
         name: 'Questions',
-        message: 'Enter your LinkedIn URL.',
+        message: 'How can questions be submitted about your project',
         
 },];
 
 // TODO: Create a function to write README file
-function writeToFile(generateMarkdown, answers) {}
+function writeToFile(generateMarkdown, answers) {
+    fs.writeFile(generateMarkdown, JSON.stringify(data, null, '\t'), (err) =>
+    err ? console.log(err) : console.log('Success!')
+}
 
 // TODO: Create a function to initialize app
 function init() {}
