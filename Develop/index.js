@@ -55,7 +55,7 @@ const questions = () => {
         type: 'input',
         name: 'Questions',
         message: 'How can questions be submitted about your project?',
-    }
+    },
     {
         type: "input",
         name: "username",
@@ -71,7 +71,7 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+  
     fs.writeFile(fileName, JSON.stringify(data), function(err) {
         if (err) {
         console.log(err);
