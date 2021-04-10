@@ -52,18 +52,21 @@ const questions = [{
     {
         type: 'input',
         name: 'Questions',
-        message: 'How can questions be submitted about your project',
-        
-},];
+        message: 'How can questions be submitted about your project?',}
+]   
 
 // TODO: Create a function to write README file
-function writeToFile(generateMarkdown, answers) {
-    fs.writeFile(generateMarkdown, JSON.stringify(data, null, '\t'), (err) =>
-    err ? console.log(err) : console.log('Success!')
-}
+.then((data) => {
+    const newReadMe = `${data.name.toLowerCase().split(' ').join('')}.json`;
+
+    fs.writeFile(README.MD, JSON.stringify(data, null, '\t'), (err) =>
+      err ? console.log(err) : console.log('Success!'))
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+
+}
 
 // Function call to initialize app
-init();
+init();})
